@@ -6,7 +6,11 @@ const cors = require('cors');
 
 // Express ilovasini yaratish
 const app = express();
-app.use(cors('*'));
+app.use(cors({
+    origin: '*', // or specify your frontend URL, e.g., 'https://your-frontend-app.com'
+    methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
+}));
+
 app.use(express.json());
 
 // MongoDB ulanishi
